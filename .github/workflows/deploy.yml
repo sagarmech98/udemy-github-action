@@ -35,8 +35,6 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    env:
-      MONGODB_USERNAME: sagarmech98_db_user
     steps:
       - name: Output information
         run: |
