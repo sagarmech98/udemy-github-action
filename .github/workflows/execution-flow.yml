@@ -83,4 +83,4 @@ jobs:
       - name: output information
         run: |
           echo "This is a demo repo for learning GitHub Actions"
-          echo "{{ github }}"
+          echo "{{ toJSON(github) }}"
