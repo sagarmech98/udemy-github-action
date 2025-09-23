@@ -21,7 +21,7 @@ jobs:
 
   deploy:
     needs: build
-    uses: ./.github/workflows/deploy.yml
+    uses: ./.github/workflows/deploye.yml
     with:
       environment: ${{ github.event.inputs.environment }}
       artifact-name: ${{ github.event.inputs.artifact-name }}
