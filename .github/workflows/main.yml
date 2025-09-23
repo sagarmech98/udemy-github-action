@@ -6,11 +6,11 @@ on:
       environment:
         description: "Which environment to deploy to (dev/staging/prod)"
         required: true
-        default: "dev"
+        default: dev
       artifact-name:
         description: "Artifact name to deploy"
         required: false
-        default: "dist"
+        default: dist
 
 jobs:
   build:
