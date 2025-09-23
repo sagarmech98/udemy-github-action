@@ -1,0 +1,27 @@
+name: Main Workflow (Caller)
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Which environment to deploy to (dev/staging/prod)"
+        required: true
+        default: "dev"
+      artifact-name:
+        description: "Artifact name to deploy"
+        required: false
+        default: "dist"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build something
+        run: echo "Building project..."
+
+  deploy:
+    needs: build
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment: ${{ github.event.inputs.environment }}
+      artifact-name: ${{ github.event.inputs.artifact-name }}
