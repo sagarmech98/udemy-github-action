@@ -1,25 +1,25 @@
-name: Reusable Deploy Workflow
+# name: Reusable Deploy Workflow
 
-on:
-  workflow_call:
-    inputs:
-      environment:
-        description: "Which environment to deploy to"
-        required: true
-        type: string
-      artifact-name:
-        description: "Artifact name"
-        required: false
-        default: dist
-        type: string
+# on:
+#   workflow_call:
+#     inputs:
+#       environment:
+#         description: "Which environment to deploy to"
+#         required: true
+#         type: string
+#       artifact-name:
+#         description: "Artifact name"
+#         required: false
+#         default: dist
+#         type: string
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Show inputs
-        run: |
-          echo "Environment: ${{ inputs.environment }}"
-          echo "Artifact: ${{ inputs.artifact-name }}"
-      - name: Fake deploy
-        run: echo "Deploying to ${{ inputs.environment }} 🚀"
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Show inputs
+#         run: |
+#           echo "Environment: ${{ inputs.environment }}"
+#           echo "Artifact: ${{ inputs.artifact-name }}"
+#       - name: Fake deploy
+#         run: echo "Deploying to ${{ inputs.environment }} 🚀"
